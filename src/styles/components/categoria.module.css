@@ -1,0 +1,54 @@
+.categoria {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.categoria h2 {
+    font-size: 1.5rem;
+    margin: 0;
+    text-align: left;
+}
+
+.addTarefa {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.addTarefa label {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.input {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.input input {
+    flex: 1;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.input button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.tarefas {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+}

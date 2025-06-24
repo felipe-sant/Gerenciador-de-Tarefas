@@ -26,7 +26,7 @@ function Home() {
         <main className={css.main}>
             <h1>Gerenciador de Tarefas por Categoria</h1>
             <div className={css.addCategoria}>
-                <label>Adicionar Tarefa</label>
+                <label>Adicionar Nova Categoria</label>
                 <div className={css.input}>
                     <input
                         type="text"

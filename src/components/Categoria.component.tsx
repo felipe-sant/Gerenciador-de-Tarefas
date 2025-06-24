@@ -28,8 +28,8 @@ function CategoriaComponent(props: { categoria: CategoriasType }) {
     return (
         <div className={css.categoria}>
             <h2>{titulo}</h2>
-            <div className={css.input}>
-                <h3>Adicionar tarefa</h3>
+            <div className={css.addTarefa}>
+                <label>Adicionar tarefa</label>
                 <div className={css.input}>
                     <input
                         type="text"
