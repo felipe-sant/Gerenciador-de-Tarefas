@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import css from "../styles/pages/home.module.css"
 import CategoriasType from "../types/Categorias";
 import myContext from "../context/Context";
+import CategoriaComponent from "../components/Categoria.component";
 
 function Home() {
     const context = useContext(myContext)
@@ -25,7 +26,7 @@ function Home() {
         <main className={css.main}>
             <h1>Gerenciador de Tarefas por Categoria</h1>
             <div className={css.addCategoria}>
-                <label>Adicionar Nova Categoria</label>
+                <label>Adicionar Tarefa</label>
                 <div className={css.input}>
                     <input
                         type="text"
@@ -36,17 +37,9 @@ function Home() {
                     <button onClick={handleAddCategoria}>Adicionar</button>
                 </div>
             </div>
+            <hr />
             <div className={css.categorias}>
-                {categorias.map((categoria, index) => (
-                    <div key={index} className={css.categoria}>
-                        <h2>{categoria.titulo}</h2>
-                        <ul>
-                            {categoria.tarefas.map((tarefa, tarefaIndex) => (
-                                <li key={tarefaIndex}>{tarefa.descricao}</li>
-                            ))}
-                        </ul>
-                    </div>
-                ))}
+                {categorias.map((categoria, index) => <CategoriaComponent key={index} categoria={categoria} />)}
             </div>
         </main>
     )

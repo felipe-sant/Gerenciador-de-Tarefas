@@ -16,11 +16,33 @@ function MyProvider({ children }: MyProviderProps) {
     }
 
     function addTarefa(categoria: CategoriasType, tarefa: TarefaType): void {
-        console.log("adicionando tarefa")
+        setCategorias((prevCategorias) => {
+            return prevCategorias.map((cat) => {
+                if (cat.titulo === categoria.titulo) {
+                    return {
+                        ...cat,
+                        tarefas: [...cat.tarefas, tarefa]
+                    }
+                }
+                return cat;
+            })
+        })
     }
 
     function markTaskAsCompleted(tarefa: TarefaType): void {
-        console.log("marcando task")
+        setCategorias((prevCategorias) => {
+            return prevCategorias.map((categoria) => {
+                return {
+                    ...categoria,
+                    tarefas: categoria.tarefas.map((t) => {
+                        if (t.descricao === tarefa.descricao) {
+                            return { ...t, concluida: !t.concluida }
+                        }
+                        return t;
+                    })
+                }
+            })
+        })
     }
 
     const value: ContextType = {
